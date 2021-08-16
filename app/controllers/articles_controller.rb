@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
       session[:pageviews_remaining] -= 1
     else
       render json: { error: "Maximum pageview limit reached" }, status: :unauthorized
-      session[:pageviews_remaining] -= 1
+      session[:pageviews_remaining] = 0
     end
   end
 
